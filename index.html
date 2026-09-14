@@ -7,101 +7,207 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="hearts"></div>
+    <!-- HATI BERTERBANG -->
+    <div id="hearts"></div>
+    <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
-            <p class="small-text">💗 SEBUAH CERITA TENTANG KITA 💗</p>
-            <h1>Untuk Kamu,<br><span>Orang Kesayanganku</span> 🌷</h1>
-            <p class="intro">
-                Ada banyak hal yang nggak bisa dijelaskan dengan kata-kata,
-                tapi satu hal yang pasti, aku selalu bersyukur bisa mengenal kamu.
+            <div class="mini-heart">♡</div>
+            <p class="subtitle">
+                A LITTLE WEBSITE FOR SOMEONE SPECIAL
             </p>
-            <button onclick="scrollToGallery()">Lihat Cerita Kita 💕</button>
+            <h1>
+                Untuk Kamu,<br>
+                <span>Kesayanganku</span> 💗
+            </h1>
+            <p class="description">
+                Dari sekian banyak orang yang pernah aku temui,
+                entah kenapa kamu menjadi seseorang yang paling
+                ingin aku pertahankan.
+            </p>
+            <button onclick="lihatCerita()">
+                Lihat Cerita Kita
+                <span>↓</span>
+            </button>
         </div>
     </section>
+    <!-- PESAN -->
     <section class="message">
         <div class="container">
-            <p class="label">💌 A LITTLE MESSAGE</p>
-            <h2>Kalau ditanya kenapa aku sayang kamu...</h2>
+            <p class="section-title">
+                💌 A LITTLE MESSAGE
+            </p>
+            <h2>
+                Aku cuma mau bilang...
+            </h2>
             <p>
-                Mungkin aku nggak selalu pandai menunjukkan rasa sayang.
-                Kadang aku juga bisa menyebalkan, keras kepala, atau terlalu banyak
-                bercanda. Tapi percayalah, di balik semuanya itu ada seseorang
-                yang benar-benar menghargai kehadiran kamu.
+                Terima kasih sudah hadir di hidupku. Mungkin aku tidak
+                selalu bisa menjadi orang yang sempurna, tapi aku selalu
+                berusaha memberikan yang terbaik untuk hubungan ini.
             </p>
             <p>
-                Kamu bukan cuma seseorang yang aku sayang.
-                Kamu adalah salah satu alasan kenapa hari-hariku terasa lebih
-                berwarna. Terima kasih sudah hadir dan menjadi bagian dari
-                cerita yang ingin terus aku lanjutkan. 💗
+                Aku suka cara kamu membuat hari-hari biasa menjadi
+                terasa berbeda. Hal-hal kecil tentang kamu yang mungkin
+                menurutmu biasa saja, justru sering menjadi hal yang
+                membuatku tersenyum sendiri.
             </p>
+            <p>
+                Semoga kita selalu punya alasan untuk tertawa,
+                punya kesabaran ketika ada masalah, dan tetap memilih
+                satu sama lain meskipun keadaan tidak selalu mudah.
+            </p>
+            <div class="quote">
+                "Bukan tentang memiliki hubungan yang sempurna,
+                tapi tentang memiliki seseorang yang selalu ingin
+                memperbaiki semuanya bersama." 💗
+            </div>
         </div>
     </section>
+    <!-- GALERI -->
     <section class="gallery" id="gallery">
         <div class="container">
-            <p class="label">📸 OUR MEMORIES</p>
-            <h2>5 Foto, Ribuan Kenangan</h2>
+            <p class="section-title">
+                📸 OUR MEMORIES
+            </p>
+            <h2>
+                Beberapa Momen Kita
+            </h2>
+            <p class="gallery-desc">
+                Lima foto, banyak cerita, dan kenangan yang
+                selalu ingin aku simpan. 🌷
+            </p>
             <div class="photo-grid">
+                <!-- FOTO 1 -->
                 <div class="photo-card">
-                    <img src="foto/foto1.jpg" alt="Foto kenangan 1">
-                    <div class="caption">
-                        <h3>First Memory 🌸</h3>
-                        <p>Salah satu momen yang selalu ingin aku ingat.</p>
+                    <div class="photo-number">
+                        01
+                    </div>
+                    <img
+                        src="40505b59-2aa0-4a43-8f64-fd0be6d1e328.jpeg"
+                        alt="Kenangan 1"
+                    >
+                    <div class="photo-text">
+                        <h3>One of My Favorites 💗</h3>
+                        <p>
+                            Salah satu momen yang selalu membuatku
+                            tersenyum ketika melihatnya.
+                        </p>
                     </div>
                 </div>
+                <!-- FOTO 2 -->
                 <div class="photo-card">
-                    <img src="foto/foto2.jpg" alt="Foto kenangan 2">
-                    <div class="caption">
-                        <h3>Sweet Moment 💕</h3>
-                        <p>Senyummu selalu punya cara sendiri untuk bikin aku bahagia.</p>
+                    <div class="photo-number">
+                        02
+                    </div>
+                    <img
+                        src="4536efb5-4e63-4347-9571-f1cffa290730.jpeg"
+                        alt="Kenangan 2"
+                    >
+                    <div class="photo-text">
+                        <h3>Sweet Moment 🌸</h3>
+                        <p>
+                            Momen sederhana yang ternyata
+                            punya cerita yang luar biasa.
+                        </p>
                     </div>
                 </div>
-                <div class="photo-card">
-                    <img src="foto/foto3.jpg" alt="Foto kenangan 3">
-                    <div class="caption">
-                        <h3>Our Story 🩷</h3>
-                        <p>Semoga cerita kecil ini terus punya halaman baru.</p>
+                <!-- FOTO 3 -->
+                <div class="photo-card big-card">
+                    <div class="photo-number">
+                        03
+                    </div>
+                    <img
+                        src="749f455f-892d-414a-a798-557f7c9fb9bc.jpeg"
+                        alt="Kenangan 3"
+                    >
+                    <div class="photo-text">
+                        <h3>Our Little Story 🩷</h3>
+                        <p>
+                            Kalau kenangan bisa disimpan selamanya,
+                            aku ingin menyimpan semua momen bersamamu.
+                        </p>
                     </div>
                 </div>
+                <!-- FOTO 4 -->
                 <div class="photo-card">
-                    <img src="foto/foto4.jpg" alt="Foto kenangan 4">
-                    <div class="caption">
+                    <div class="photo-number">
+                        04
+                    </div>
+                    <img
+                        src="f0581970-a40f-453b-b167-c234c6cb78be.jpeg"
+                        alt="Kenangan 4"
+                    >
+                    <div class="photo-text">
                         <h3>My Favorite Person 🌷</h3>
-                        <p>Di antara banyak orang, kamu tetap jadi favoritku.</p>
+                        <p>
+                            Di antara banyaknya orang,
+                            kamu tetap menjadi favoritku.
+                        </p>
                     </div>
                 </div>
+                <!-- FOTO 5 -->
                 <div class="photo-card">
-                    <img src="foto/foto5.jpg" alt="Foto kenangan 5">
-                    <div class="caption">
-                        <h3>Forever Memory 💗</h3>
-                        <p>Semoga momen-momen seperti ini terus bertambah.</p>
+                    <div class="photo-number">
+                        05
+                    </div>
+                    <img
+                        src="f42d6cad-5293-4ca0-9970-7b4bd9bac002.jpeg"
+                        alt="Kenangan 5"
+                    >
+                    <div class="photo-text">
+                        <h3>Forever Memory 💕</h3>
+                        <p>
+                            Semoga foto ini bukan menjadi akhir,
+                            tapi awal dari lebih banyak kenangan.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="love-section">
-        <div class="container">
-            <div class="love-box">
-                <div class="big-heart">♥</div>
-                <h2>Untuk Kamu yang Spesial</h2>
-                <p>
-                    Aku nggak janji semuanya akan selalu sempurna.
-                    Tapi aku ingin terus belajar menjadi seseorang yang bisa
-                    membuatmu merasa dihargai, didengar, dan disayangi.
-                </p>
-                <p class="final-text">
-                    Kalau suatu hari kamu lupa betapa berharganya kamu,
-                    buka lagi website kecil ini. Karena di sini ada seseorang
-                    yang pernah menuliskan betapa berartinya kamu. 💗
-                </p>
-                <span class="signature">— dengan penuh rasa sayang 🌷</span>
+    <!-- LOVE SECTION -->
+    <section class="love">
+        <div class="love-container">
+            <div class="heart-icon">
+                ♥
             </div>
+            <p class="section-title">
+                FOR YOU
+            </p>
+            <h2>
+                Kalau suatu hari<br>
+                kamu bertanya...
+            </h2>
+            <p class="love-text">
+                "Kenapa kamu masih memilih aku?"
+            </p>
+            <p class="answer">
+                Karena dari sekian banyak tempat untuk pulang,
+                entah kenapa hatiku selalu merasa nyaman ketika
+                ada kamu di dalamnya.
+            </p>
+            <div class="line"></div>
+            <p class="ending">
+                Semoga kita bisa terus membuat cerita,
+                mengambil lebih banyak foto, tertawa lebih banyak,
+                dan melewati banyak hal bersama.
+            </p>
+            <p class="signature">
+                With love, always. 💗
+            </p>
         </div>
     </section>
+    <!-- FOOTER -->
     <footer>
-        <p>Made with 💗 just for you</p>
-        <p>© 2026 Our Little Story</p>
+        <div class="footer-heart">
+            ♡
+        </div>
+        <p>
+            Made especially for you 💗
+        </p>
+        <small>
+            Our little story • 2026
+        </small>
     </footer>
     <script src="script.js"></script>
 </body>
