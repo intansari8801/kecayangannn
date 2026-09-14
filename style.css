@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background: #fff5f8;
+    color: #542333;
+    overflow-x: hidden;
+}
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+/* HEART ANIMATION */
+.hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 999;
+}
+.heart {
+    position: absolute;
+    color: #ff6f9f;
+    font-size: 20px;
+    animation: float 5s linear forwards;
+}
+@keyframes float {
+    0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) scale(1.3) rotate(20deg);
+        opacity: 0;
+    }
+}
+/* HERO */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    background:
+        radial-gradient(circle at top left, #ffd6e5, transparent 35%),
+        radial-gradient(circle at bottom right, #ffc1d8, transparent 35%),
+        #fff5f8;
+}
+.hero-content {
+    max-width: 750px;
+}
+.small-text,
+.label {
+    color: #e85d8a;
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+.hero h1 {
+    font-size: clamp(45px, 8vw, 85px);
+    line-height: 1.05;
+    margin: 25px 0;
+    color: #572235;
+}
+.hero h1 span {
+    color: #e85d8a;
+}
+.intro {
+    max-width: 600px;
+    margin: auto;
+    line-height: 1.8;
+    font-size: 16px;
+    color: #795263;
+}
+button {
+    margin-top: 35px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    background: #e85d8a;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(232, 93, 138, 0.3);
+    transition: 0.3s;
+}
+button:hover {
+    transform: translateY(-4px);
+    background: #d94778;
+}
+/* MESSAGE */
+.message {
+    padding: 110px 0;
+    background: white;
+}
+.message .container {
+    max-width: 800px;
+    text-align: center;
+}
+.message h2,
+.gallery h2,
+.love-box h2 {
+    font-size: clamp(30px, 5vw, 48px);
+    margin: 20px 0 30px;
+    color: #572235;
+}
+.message p:not(.label) {
+    line-height: 2;
+    margin-bottom: 20px;
+    color: #795263;
+}
+/* GALLERY */
+.gallery {
+    padding: 110px 0;
+    background: #fff5f8;
+    text-align: center;
+}
+.photo-grid {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+.photo-card {
+    background: white;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(130, 50, 80, 0.1);
+    transition: 0.4s;
+    text-align: left;
+}
+.photo-card:hover {
+    transform: translateY(-8px) rotate(-1deg);
+    box-shadow: 0 20px 45px rgba(130, 50, 80, 0.18);
+}
+.photo-card:nth-child(3) {
+    grid-column: span 2;
+}
+.photo-card img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    display: block;
+}
+.photo-card:nth-child(3) img {
+    height: 430px;
+}
+.caption {
+    padding: 22px;
+}
+.caption h3 {
+    color: #d94f7f;
+    margin-bottom: 8px;
+}
+.caption p {
+    color: #80616c;
+    line-height: 1.6;
+}
+/* LOVE SECTION */
+.love-section {
+    padding: 110px 0;
+    background: #ffdce8;
+}
+.love-box {
+    max-width: 750px;
+    margin: auto;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.65);
+    padding: 60px 35px;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+}
+.big-heart {
+    font-size: 70px;
+    color: #e85d8a;
+    animation: heartbeat 1.3s infinite;
+}
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+}
+.love-box p {
+    line-height: 1.9;
+    color: #795263;
+    margin-bottom: 20px;
+}
+.final-text {
+    font-weight: 500;
+}
+.signature {
+    display: block;
+    margin-top: 30px;
+    color: #d94f7f;
+    font-style: italic;
+}
+/* FOOTER */
+footer {
+    padding: 30px;
+    text-align: center;
+    background: #542333;
+    color: #ffdce8;
+    line-height: 1.8;
+}
+/* MOBILE */
+@media (max-width: 700px) {
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+    .photo-card:nth-child(3) {
+        grid-column: span 1;
+    }
+    .photo-card img,
+    .photo-card:nth-child(3) img {
+        height: 330px;
+    }
+    .hero h1 {
+        font-size: 48px;
+    }
+    .message,
+    .gallery,
+    .love-section {
+        padding: 80px 0;
+    }
+}
