@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -7,9 +8,9 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    font-family: "Poppins", Arial, sans-serif;
-    background: #fff5f8;
-    color: #542333;
+    font-family: 'Poppins', sans-serif;
+    background: #fff7fa;
+    color: #542738;
     overflow-x: hidden;
 }
 .container {
@@ -17,33 +18,39 @@ body {
     max-width: 1100px;
     margin: auto;
 }
-/* HEART ANIMATION */
-.hearts {
+/* =========================
+   HEART ANIMATION
+========================= */
+#hearts {
     position: fixed;
     inset: 0;
     pointer-events: none;
-    z-index: 999;
+    z-index: 1000;
 }
-.heart {
+.floating-heart {
     position: absolute;
-    color: #ff6f9f;
-    font-size: 20px;
-    animation: float 5s linear forwards;
+    bottom: -30px;
+    color: #f28aaa;
+    font-size: 18px;
+    animation: naik 6s linear forwards;
+    opacity: 0;
 }
-@keyframes float {
+@keyframes naik {
     0% {
-        transform: translateY(100vh) scale(0.5);
+        transform: translateY(0) rotate(0);
         opacity: 0;
     }
-    20% {
-        opacity: 1;
+    15% {
+        opacity: .8;
     }
     100% {
-        transform: translateY(-10vh) scale(1.3) rotate(20deg);
+        transform: translateY(-110vh) rotate(35deg);
         opacity: 0;
     }
 }
-/* HERO */
+/* =========================
+   HERO
+========================= */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -52,188 +59,275 @@ body {
     text-align: center;
     padding: 40px 20px;
     background:
-        radial-gradient(circle at top left, #ffd6e5, transparent 35%),
-        radial-gradient(circle at bottom right, #ffc1d8, transparent 35%),
-        #fff5f8;
+        radial-gradient(
+            circle at 10% 20%,
+            #ffd5e2 0,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            #ffc4d8 0,
+            transparent 30%
+        ),
+        #fff7fa;
 }
 .hero-content {
     max-width: 750px;
 }
-.small-text,
-.label {
-    color: #e85d8a;
-    font-size: 13px;
-    letter-spacing: 3px;
-    font-weight: bold;
+.mini-heart {
+    font-size: 65px;
+    color: #e96891;
+    animation: pulse 1.5s infinite;
 }
-.hero h1 {
-    font-size: clamp(45px, 8vw, 85px);
-    line-height: 1.05;
-    margin: 25px 0;
-    color: #572235;
-}
-.hero h1 span {
-    color: #e85d8a;
-}
-.intro {
-    max-width: 600px;
-    margin: auto;
-    line-height: 1.8;
-    font-size: 16px;
-    color: #795263;
-}
-button {
-    margin-top: 35px;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 50px;
-    background: #e85d8a;
-    color: white;
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 10px 25px rgba(232, 93, 138, 0.3);
-    transition: 0.3s;
-}
-button:hover {
-    transform: translateY(-4px);
-    background: #d94778;
-}
-/* MESSAGE */
-.message {
-    padding: 110px 0;
-    background: white;
-}
-.message .container {
-    max-width: 800px;
-    text-align: center;
-}
-.message h2,
-.gallery h2,
-.love-box h2 {
-    font-size: clamp(30px, 5vw, 48px);
-    margin: 20px 0 30px;
-    color: #572235;
-}
-.message p:not(.label) {
-    line-height: 2;
-    margin-bottom: 20px;
-    color: #795263;
-}
-/* GALLERY */
-.gallery {
-    padding: 110px 0;
-    background: #fff5f8;
-    text-align: center;
-}
-.photo-grid {
-    margin-top: 50px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-}
-.photo-card {
-    background: white;
-    border-radius: 22px;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(130, 50, 80, 0.1);
-    transition: 0.4s;
-    text-align: left;
-}
-.photo-card:hover {
-    transform: translateY(-8px) rotate(-1deg);
-    box-shadow: 0 20px 45px rgba(130, 50, 80, 0.18);
-}
-.photo-card:nth-child(3) {
-    grid-column: span 2;
-}
-.photo-card img {
-    width: 100%;
-    height: 330px;
-    object-fit: cover;
-    display: block;
-}
-.photo-card:nth-child(3) img {
-    height: 430px;
-}
-.caption {
-    padding: 22px;
-}
-.caption h3 {
-    color: #d94f7f;
-    margin-bottom: 8px;
-}
-.caption p {
-    color: #80616c;
-    line-height: 1.6;
-}
-/* LOVE SECTION */
-.love-section {
-    padding: 110px 0;
-    background: #ffdce8;
-}
-.love-box {
-    max-width: 750px;
-    margin: auto;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.65);
-    padding: 60px 35px;
-    border-radius: 30px;
-    backdrop-filter: blur(10px);
-}
-.big-heart {
-    font-size: 70px;
-    color: #e85d8a;
-    animation: heartbeat 1.3s infinite;
-}
-@keyframes heartbeat {
-    0%, 100% {
+@keyframes pulse {
+    0%,100% {
         transform: scale(1);
     }
     50% {
         transform: scale(1.15);
     }
 }
-.love-box p {
+.subtitle,
+.section-title {
+    font-size: 11px;
+    letter-spacing: 4px;
+    font-weight: 600;
+    color: #df5d87;
+}
+.hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(50px, 8vw, 90px);
+    line-height: 1.05;
+    margin: 25px 0;
+    color: #512536;
+}
+.hero h1 span {
+    color: #e55f89;
+}
+.description {
+    max-width: 600px;
+    margin: auto;
     line-height: 1.9;
-    color: #795263;
+    color: #7c5a67;
+    font-size: 15px;
+}
+button {
+    margin-top: 35px;
+    padding: 15px 28px;
+    border: none;
+    border-radius: 50px;
+    background: #e7658e;
+    color: white;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 12px 30px rgba(225, 86, 126, .25);
+    transition: .3s;
+}
+button:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 18px 35px rgba(225, 86, 126, .3);
+}
+button span {
+    margin-left: 8px;
+}
+/* =========================
+   MESSAGE
+========================= */
+.message {
+    padding: 120px 0;
+    background: white;
+    text-align: center;
+}
+.message .container {
+    max-width: 800px;
+}
+.message h2,
+.gallery h2,
+.love h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(35px, 5vw, 55px);
+    color: #542536;
+    margin: 20px 0 30px;
+}
+.message p:not(.section-title) {
+    color: #795c68;
+    line-height: 2;
     margin-bottom: 20px;
 }
-.final-text {
-    font-weight: 500;
-}
-.signature {
-    display: block;
-    margin-top: 30px;
-    color: #d94f7f;
-    font-style: italic;
-}
-/* FOOTER */
-footer {
+.quote {
+    margin-top: 35px;
     padding: 30px;
-    text-align: center;
-    background: #542333;
-    color: #ffdce8;
+    border-left: 3px solid #ed7699;
+    background: #fff2f6;
+    color: #875567;
+    font-style: italic;
     line-height: 1.8;
 }
-/* MOBILE */
+/* =========================
+   GALLERY
+========================= */
+.gallery {
+    padding: 120px 0;
+    background: #fff5f8;
+    text-align: center;
+}
+.gallery-desc {
+    color: #896b76;
+    margin-bottom: 50px;
+}
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+.photo-card {
+    position: relative;
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    text-align: left;
+    box-shadow:
+        0 15px 40px rgba(105, 43, 68, .10);
+    transition: .4s;
+}
+.photo-card:hover {
+    transform: translateY(-8px);
+}
+.photo-card img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    display: block;
+    transition: .5s;
+}
+.photo-card:hover img {
+    transform: scale(1.04);
+}
+.big-card {
+    grid-column: span 2;
+}
+.big-card img {
+    height: 480px;
+}
+.photo-number {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    z-index: 2;
+    padding: 7px 12px;
+    border-radius: 30px;
+    background: rgba(255,255,255,.85);
+    color: #d85b82;
+    font-size: 12px;
+    font-weight: 600;
+}
+.photo-text {
+    padding: 22px 24px 25px;
+}
+.photo-text h3 {
+    color: #d9567e;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+.photo-text p {
+    color: #80636e;
+    line-height: 1.7;
+    font-size: 13px;
+}
+/* =========================
+   LOVE
+========================= */
+.love {
+    padding: 120px 20px;
+    background:
+        radial-gradient(
+            circle at center,
+            #ffc9da,
+            #f6a8c1
+        );
+    text-align: center;
+}
+.love-container {
+    max-width: 750px;
+    margin: auto;
+    background: rgba(255,255,255,.45);
+    padding: 65px 40px;
+    border-radius: 35px;
+    backdrop-filter: blur(10px);
+}
+.heart-icon {
+    font-size: 70px;
+    color: #df5d87;
+    animation: pulse 1.4s infinite;
+}
+.love-text {
+    font-size: 18px;
+    font-weight: 500;
+    color: #744555;
+    margin-bottom: 20px;
+}
+.answer,
+.ending {
+    color: #755463;
+    line-height: 1.9;
+    font-size: 15px;
+}
+.line {
+    width: 60px;
+    height: 2px;
+    background: #df668b;
+    margin: 35px auto;
+}
+.signature {
+    margin-top: 30px;
+    color: #d9547c;
+    font-style: italic;
+}
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background: #522536;
+    color: #fbdce6;
+    text-align: center;
+    padding: 35px 20px;
+    line-height: 1.8;
+}
+.footer-heart {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+footer small {
+    opacity: .7;
+}
+/* =========================
+   MOBILE
+========================= */
 @media (max-width: 700px) {
-    .photo-grid {
-        grid-template-columns: 1fr;
-    }
-    .photo-card:nth-child(3) {
-        grid-column: span 1;
-    }
-    .photo-card img,
-    .photo-card:nth-child(3) img {
-        height: 330px;
+    .hero {
+        min-height: 95vh;
     }
     .hero h1 {
-        font-size: 48px;
+        font-size: 50px;
     }
     .message,
     .gallery,
-    .love-section {
+    .love {
         padding: 80px 0;
+    }
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+    .big-card {
+        grid-column: span 1;
+    }
+    .photo-card img,
+    .big-card img {
+        height: 330px;
+    }
+    .love-container {
+        padding: 50px 25px;
     }
 }
